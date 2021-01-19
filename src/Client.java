@@ -37,7 +37,8 @@ public class Client implements Runnable{
                         client.writer.flush();
                     }
                 }
-                clientData = reader.readLine() + "\n";
+                 clientData =  reader.readLine() + "\n";
+                clientData = clientName + ": " + clientData;
             }
         }
         catch (IOException e){
