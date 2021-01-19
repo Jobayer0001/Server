@@ -6,12 +6,12 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         try {
-            ServerSocket server = new ServerSocket(9090);
+            ServerSocket serverSocket = new ServerSocket(9090);
             ArrayList<Client> clients = new ArrayList<>();
 
             while (true) {
                 try {
-                    Socket socket = server.accept();
+                    Socket socket = serverSocket.accept();
                     Client client = new Client(socket, clients);
                     clients.add(client);
                     Thread clientThread = new Thread(client);
